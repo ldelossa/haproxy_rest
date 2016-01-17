@@ -7,6 +7,7 @@ from haproxy_rest import HaProxy
 app = Flask(__name__)
 hap = HaProxy('/var/run/haproxysock')
 
+
 @app.route('/haproxy/api/v1.0/disable_server', methods=['PUT'])
 def disable_server():
     in_dict = {'backend': request.json['backend'], 'server': request.json['server']}
